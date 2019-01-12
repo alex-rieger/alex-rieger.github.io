@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Alex Rieger - web developer, media designer.</title>
+
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <style type="text/css">
+        :root {
+            --white: #eee;
+            --grey: #2a4150;
+        }
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            background: var(--white);
+            color: var(--grey);
+            font-size: 24px;
+            font-family: 'VT323', monospace;
+        }
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 0 1rem;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        @media (min-width: 1280px) {
+            .wrapper {
+                width: 1280px;
+                margin: 0 auto;
+            }
+        }
+
+        /* spaces */
+        .mbm { margin-bottom: 1rem;}
+        .mbs { margin-bottom: 0.5rem;}
+        .mbxs { margin-bottom: 0.25rem;}
+
+
+        /* profile */
+        .profile {
+            width: 100%;
+            max-width: 768px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+        }
+        @media (min-width: 768px) {
+            .profile {
+                flex-direction: row;
+            }
+        }
+
+        .profile__image {
+            padding: 1rem .5rem 1rem 1rem;
+        }
+        .profile__content {
+            padding: 1rem 1rem 1rem .5rem;
+        }
+        .profile__headline {
+            font-size: 2.5rem
+        }
+        .profile__text {
+            font-size: 1rem
+        }
+        .profile__text--m {
+            font-size: 1.5rem;
+        }
+        .profile__list {
+            list-style-type: none;
+        }
+
+        /* link */
+        .link {
+            text-decoration: none;
+            position: relative;
+            color: var(--grey);
+        }
+        .link:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: .125rem;
+            bottom: -.2rem;
+            left: 0;
+            background: #5666C4;
+            transition: all .5s ease;
+        }
+        .link:hover::before,
+        .link:active::before {
+            background: #DC2B65;
+            color: #DC2B65;
+        }
+
+        .link:focus {
+            outline: dashed 4px #DC2B65;
+            color: #DC2B65;
+            outline-offset: .05rem;
+        }
+        .link:focus::before {
+            background: transparent;
+        }
+
+        /* bar */
+        .bar {
+            position: absolute;
+            height: .4rem;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #DC2B65;
+        }
+
+        /* avatar */
+        .avatar {
+            display: flex;
+            flex-flow: column nowrap;
+            width: 320px;
+        }
+        .avatar__line {
+            display: inline-flex;
+        }
+        .avatar__pixel {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <main class="profile">
+            <div class="profile__image">
+                <div class="avatar" id="avatar">
+                </div>
+            </div>
+
+            <div class="profile__content">
+                <h1 class="profile__headline mbs">Alex Rieger</h1>
+                <p class="profile__text profile__text--m mbs">web developer, media designer.</p>
+                <ul class="profile__list">
+                    <li class="profile__listitem mbxs">
+                        <a href="https://www.xing.com/profile/Alexander_Rieger22/cv" target="_blank" class="link">@xing</a>
+                    </li>
+                    <li class="profile__listitem mbxs">
+                        <a href="https://de.linkedin.com/in/alexander-rieger-578598154" target="_blank" class="link">@linkedin</a>
+                    </li>
+                    <li class="profile__listitem mbxs">
+                        <a href="https://github.com/alex-rieger" target="_blank" class="link">@github</a>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <div class="bar"></div>
+
+    </div>
+
+    <script type="text/javascript">
+        let a = '#B84064', // jacket
+            b = '#3F4A6D', // shirt
+            c = '#fefefe', // laces
+            h = '#745629', // hair
+            g = '#49423F', // glasses
+            s = '#ECBB81', // skin
+            x = '#CFA572', // skin shade
+            y = '#CDF8F6', // background
+            z = '#eeeeee', // background border
+            f = '#dddddd' // background
+        ;
+
+        let pixelMap = [
+            [z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z, z],
+            [z, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, z],
+            [z, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, h, h, y, y, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, y, y, y, y, h, h, h, h, h, y, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, y, y, h, h, h, h, h, h, h, h, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, y, h, h, h, h, h, h, h, h, h, h, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, h, h, h, h, h, h, h, h, h, h, h, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, h, h, h, s, s, s, s, s, s, s, h, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, h, h, s, s, s, s, s, s, s, s, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, h, s, s, s, s, s, s, s, s, s, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, s, g, g, g, g, g, g, g, g, g, g, g, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, s, s, s, g, x, x, g, s, g, x, x, g, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, s, h, s, g, g, g, g, s, g, g, g, g, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, y, h, s, s, s, s, s, s, s, s, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, y, h, h, h, h, h, h, h, h, h, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, y, y, x, h, h, h, s, s, s, h, h, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, a, a, a, s, x, x, h, h, h, h, h, y, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, a, a, a, a, b, b, s, x, x, x, x, y, y, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, a, a, a, a, b, s, s, s, s, s, y, y, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, y, a, a, a, a, b, b, b, s, b, a, a, y, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, y, a, a, a, a, a, b, b, b, s, b, a, a, a, y, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, a, a, a, a, a, a, a, b, b, b, b, a, a, a, a, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, a, a, a, a, a, c, a, b, b, b, b, a, c, a, a, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, a, a, a, a, a, c, a, b, b, b, b, a, c, a, a, y, y, y, y, y, y, y, f],
+            [z, y, y, y, y, y, y, y, y, a, a, a, a, a, c, a, b, b, b, b, a, c, a, a, y, y, y, y, y, y, y, f],
+            [z, z, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f]
+
+        ];
+
+        function parsePixelMapToDom (pixelMap) {
+            let fragment = document.createDocumentFragment();
+
+            function parsePixel (pixel) {
+                let resultPixel = createElementWithClass('span', 'avatar__pixel');
+                resultPixel.style.background = pixel;
+                return resultPixel;
+            }
+
+            function parseLine (line) {
+                let result = createElementWithClass('div', 'avatar__line');
+                line.forEach( pixel => {
+                    result.appendChild(parsePixel(pixel));
+                });
+                return result;
+            }
+
+            pixelMap.forEach( line => {
+                fragment.appendChild(parseLine(line));
+            });
+
+            return fragment;
+        }
+
+        function createElementWithClass(tagName, className) {
+            let elem = document.createElement(tagName);
+            elem.classList.add(className);
+            return elem;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            let avatarContainer = document.querySelector('#avatar');
+            let avatar = parsePixelMapToDom(pixelMap);
+            avatarContainer.appendChild(avatar);
+        });
+    </script>
+</body>
+</html>
