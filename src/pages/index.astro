@@ -1,0 +1,70 @@
+---
+import { Image } from '@astrojs/image/components';
+import Layout from '../layouts/Layout.astro';
+import IconGithub from '../components/IconGithub.astro';
+import IconLinkedin from '../components/IconLinkedin.astro';
+import SocialButton from '../components/SocialButton.astro';
+import Terminal from '../components/Terminal.astro';
+import TerminalCaret from '../components/TerminalCaret.astro';
+import Headline from '../components/Headline.astro';
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<Image class="banner" width={880} src={import('../images/bg.jpg')} alt="" />
+		<header>
+			<Image class="profile" width={288} src={import('../images/profile.jpg')} />
+			<Headline>Alex Rieger</Headline>
+		</header>
+		<div class="compact">
+			<Terminal>
+				Developer @ 
+				<a class="sit-link" href="https://it.schwarz/en" target="_blank" rel="noopener noreferrer">
+					<span class="sit-link-flag">&gt;</span>SchwarzIT
+				</a><br>
+				&gt; TypeScript & Vue & Node & Kotlin & Go <TerminalCaret />
+			</Terminal>
+			<SocialButton href="#" text="Check my projects">
+				<IconGithub/>
+			</SocialButton>
+			<SocialButton href="#" text="Drop me a message">
+				<IconLinkedin/>
+			</SocialButton>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 80ch;
+		text-align: center;
+	}
+	.compact {
+		max-width: 50ch;
+		margin: 0 auto;
+	}
+	.banner {
+		width: 100%;
+		height: 240px;
+		object-fit: cover;
+		border-radius: .35rem;
+		margin-bottom: -4.5rem;
+	}
+	.profile {
+		width: 6rem;
+		height: 6rem;
+		border-radius: 50%;
+		border: solid 3px hsla(240, 22%, 97%, 1);
+	}
+	.sit-link {
+		color: white;
+	}
+	.sit-link-flag {
+		background: #6e1e6e;
+		color: white;
+		padding: .1rem;
+	}
+</style>
